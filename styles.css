@@ -1,8 +1,8 @@
-/* CSS by Christina Carrasquilla, iteration by */
+/* CSS by Christina Carrasquilla, iteration by Elisabeth Hamlin*/
 
 /* ===== Color Palette ===== 
 
-    backgound: #0f172a;
+    background: #0f172a;
     nav-footer: #020617;
     card: #1e293b;
     text-main: #e2e8f0;
@@ -17,7 +17,6 @@ body {
     margin: 0;
     background-color: #0f172a;
     color: #e2e8f0;
-    min-width:500px;
     display:grid;
     grid-template-columns:1fr;
 }
@@ -83,16 +82,17 @@ aside {
 }
 
 a {
-    display:block;
+    display:inline-block;
+    width:fit-content;
     background-color:#020617;
     color:#e2e8f0;
-    padding:1rem 2rem;
+    padding:6px 10px;
     text-decoration:none;
     text-align:center;
 }
 a:hover {
-    color:#020617;
-    background-color:#e2e8f0;
+    color:#000000;
+    background-color:#38bdf8;
 }
 
 footer {
@@ -103,9 +103,35 @@ footer {
 }
 
 /* ===== Media Query (Medium) ===== */
-/* write a media query for a screen with at least 800px */
-/* change the body's grid template to 1fr 300px */
-/* target the header, nav, and footer and style their grid-column to 1/-1 */
-/* target the nav and display it flex, spaceed around */
-/* target the .card-row to display flex */
-/* target the sections in .card-row witha width for 30% */
+
+@media screen and (min-width: 800px) {
+
+    body {
+        grid-template-columns: 1fr 300px;
+    }
+
+    header,
+    nav,
+    footer {
+        grid-column: 1 / -1;
+    }
+
+    nav ul {
+        display: flex;
+        justify-content: space-around;
+    }
+
+    aside {
+        margin: 1.5rem 1rem 0 0;
+        align-self: start;
+    }
+
+    .card-row {
+        display: flex;
+        gap: 1rem;
+    }
+
+    .card-row section {
+        width: 30%;
+    }
+}
